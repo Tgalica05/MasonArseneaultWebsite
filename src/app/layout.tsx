@@ -1,10 +1,13 @@
-import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Link from "next/link";
 import "./globals.css";
+import { Metadata } from "next";
 import { Inter } from "next/font/google";
+import "./globals.css";
+import Link from "next/link";
 import Image from "next/image";
+import MobileNavbar from "./MobileNavbar"; // client component
+
 
 const inter = Inter({ subsets: ["latin"], });
 
@@ -26,23 +29,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-    <body className={`${inter.className} antialiased`}>
-      {/* Top black navbar fixed to top */}
-      <nav className="fixed top-0 left-0 w-full bg-black h-24 flex items-center justify-center px-4 z-50 shadow-md">
-        <Image src="/RelentlessWrapsLogoV2.png" alt="RelentlessWrapsLogoV2" width={140} height={140} className="absolute left-4"/>
-        <div className="flex gap-4">
-          <Link href="/" className="navButton">Home</Link>
-          <Link href="/tints" className="navButton">Tints</Link>
-          <Link href="/wraps" className="navButton">Wraps</Link>
-          <Link href="/ppf" className="navButton">PPF</Link>
-        </div>
-      </nav>
+      <body className={`${inter.className} antialiased`}>
+        {/* Navbar */}
+        <MobileNavbar/>
 
-      {/* Push content below navbar */}
-      <main className="mt-40">
-        {children}
-      </main>
-    </body>
+        {/* Page content */}
+        <main className="pt-24">{children}</main>
+      </body>
     </html>
   );
 }

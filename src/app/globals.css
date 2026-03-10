@@ -25,14 +25,24 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.navButton {
-  @apply bg-black text-white rounded-xl border-amber-100 text-center transition-colors duration-350;
-  /* fixed size 10rem width, 3rem height*/
-  @apply w-20 h-12;
-  /* center text vertically */
-  @apply flex items-center justify-center;
+/* Desktop button */
+.navButtonDesktop {
+  @apply bg-black text-white rounded-xl text-center font-bold
+         flex items-center justify-center overflow-hidden text-ellipsis whitespace-nowrap
+         w-32 h-12 text-xl transition-colors duration-300;
 }
 
-.navButton:hover {
+.navButtonDesktop:hover {
+  @apply bg-white text-black;
+}
+
+/* Mobile button */
+.navButtonMobile {
+  @apply bg-black text-white rounded-xl text-center font-bold
+         flex items-center justify-center overflow-hidden text-ellipsis whitespace-nowrap
+         w-28 h-10 text-lg transition-colors duration-300;
+}
+
+.navButtonMobile:hover {
   @apply bg-white text-black;
 }
