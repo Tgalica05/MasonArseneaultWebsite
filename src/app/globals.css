@@ -24,3 +24,15 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.navButton {
+  @apply bg-black text-white rounded-xl border-amber-100 text-center transition-colors duration-350;
+  /* fixed size 10rem width, 3rem height*/
+  @apply w-20 h-12;
+  /* center text vertically */
+  @apply flex items-center justify-center;
+}
+
+.navButton:hover {
+  @apply bg-white text-black;
+}
