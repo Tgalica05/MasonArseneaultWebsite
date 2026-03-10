@@ -1,11 +1,10 @@
 'use client'
-import Image from "next/image";
-import Link from "next/link";
 
 export default function Home() {
   return (
-    <div style={{ textAlign: "center", marginTop: "40px", fontSize: "30px" }}>
-      <strong>Mason's Website</strong>
+    <div className="text-center mt-10 text-3xl">
+      <h1>Mason's Website</h1>
+      <p className="mt-4 text-lg">I wrap cars and things</p>
     </div>
   );
 }
