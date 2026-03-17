@@ -18,8 +18,13 @@ export default function BottomBar() {
         </div>
 
         {/* TikTok (always right) */}
+        {/* TikTok (always right) */}
         <div className="absolute right-0">
-          <Link href="https://www.tiktok.com/@relentlesswrapsct" >
+          <a
+            href="https://www.tiktok.com/@relentlesswrapsct"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Image
               src="/TikTok.png"
               alt="TikTok"
@@ -27,7 +32,7 @@ export default function BottomBar() {
               height={50}
               className="cursor-pointer hover:scale-110 transition-transform duration-200"
             />
-          </Link>
+          </a>
         </div>
 
       </div>
