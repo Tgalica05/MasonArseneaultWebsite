@@ -18,6 +18,6 @@ Call us now for a quote +1 (860) 573-9952.
 Meet the owner
 
 # Description: 
-Hi, I'm Mason Arseneault, an experienced professional in the car wrapping and tinting industry. I taek great pride in all of my work, and I am here
+Hi, I'm Mason Arseneault, an experienced professional in the car wrapping and tinting industry. I take great pride in all of my work, and I am here
 to help your vehicles and companies shine. I can guarantee you exceptional
-service and while tending to all of your needs. 
+customer service, while also tending to all of your wrapping, tinting, & paint protection needs with immense detai. 

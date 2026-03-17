@@ -50,10 +50,13 @@ export default function MobileNavbar() {
 
       {/* Mobile menu with smooth slide down */}
       <div
-        className={`md:hidden fixed top-24 left-0 w-full h-[calc(100vh-6rem)] bg-black 
-        flex flex-col items-center justify-center gap-14 z-40 pb-50
-        transition-[max-height,opacity] duration-300 ease-in-out
-        ${mobileMenuOpen ? "opacity-100" : "max-h-0 opacity-0"}`}
+        className={`md:hidden fixed top-24 left-0 w-full h-screen bg-black 
+        flex flex-col items-center justify-center gap-14 z-40
+        transform transition-all duration-300 ease-in-out
+        ${mobileMenuOpen 
+          ? "translate-y-0 opacity-100 pointer-events-auto" 
+          : "-translate-y-full opacity-0 pointer-events-none"
+        }`}
       >
         <Link href="/" className="navButtonMobile" onClick={() => setMobileMenuOpen(false)}>Home</Link>
         <Link href="/tints" className="navButtonMobile" onClick={() => setMobileMenuOpen(false)}>Tints</Link>
