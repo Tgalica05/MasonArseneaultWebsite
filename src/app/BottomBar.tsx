@@ -1,6 +1,9 @@
 'use client';
 import Link from "next/link";
 import Image from "next/image";
+import { Inter, Rubik_Gemstones, Bungee_Shade, Rubik_Glitch_Pop, Rubik_Glitch, Slabo_27px } from "next/font/google";
+
+const slabo = Slabo_27px({ subsets: ["latin"], weight: "400" });
 
 export default function BottomBar() {
   return (
@@ -10,11 +13,11 @@ export default function BottomBar() {
 
         {/* Contact Info */}
         <div className="text-white text-left md:text-center text-sm md:text-xl">
-          <h2 className="font-bold mb-2 text-lg md:text-3xl">
+          <h2 className={`font-bold mb-2 text-lg md:text-3xl`}>
             Contact Us
           </h2>
-          <p>Email: relentlesswrapsct@gmail.com</p>
-          <p className="mt-1">Phone: +1 (860) 573-9952</p>
+          <p className={`text-sm md:text-xl ${slabo.className}`}>Email: relentlesswrapsct@gmail.com</p>
+          <p className={`text-sm md:text-xl ${slabo.className} mt-1`}>Phone: +1 (860) 573-9952</p>
         </div>
 
         {/* TikTok (always right) */}

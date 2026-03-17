@@ -2,7 +2,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { Inter, Rubik_Gemstones, Bungee_Shade, Rubik_Glitch_Pop, Rubik_Glitch, Slabo_27px } from "next/font/google";
 
+const slabo = Slabo_27px({ subsets: ["latin"], weight: "400" });
 
 export default function MobileNavbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -20,7 +22,7 @@ export default function MobileNavbar() {
       </div>
 
       {/* Desktop links */}
-      <div className="hidden md:flex flex-1 absolute left-1/2 -translate-x-1/2 gap-4">
+      <div className={`hidden md:flex flex-1 absolute left-1/2 -translate-x-1/2 gap-4 `}>
         <Link href="/" className="navButtonDesktop">Home</Link>
         <Link href="/tints" className="navButtonDesktop">Tints</Link>
         <Link href="/wraps" className="navButtonDesktop">Wraps</Link>
