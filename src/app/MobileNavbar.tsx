@@ -51,7 +51,7 @@ export default function MobileNavbar() {
       {/* Mobile menu with smooth slide down */}
       <div
         className={`md:hidden fixed top-24 left-0 w-full h-screen bg-black 
-        flex flex-col items-center justify-center gap-14 z-40
+        flex flex-col items-center justify-start pt-30 gap-14 z-40
         transform transition-all duration-300 ease-in-out
         ${mobileMenuOpen 
           ? "translate-y-0 opacity-100 pointer-events-auto" 
