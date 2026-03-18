@@ -68,7 +68,7 @@ export default function tints() {
         </div>
 
         {/* Services section */}
-        <section className="max-w-6xl mx-auto py-10 md:py-20 text-center">
+        <section className="max-w-6xl mx-auto py-10 md:py-20 text-center text-black dark:text-black">
           <p className={`text-4xl font-bold mb-8 ${slabo.className}`}>
             <strong>Contact us today for</strong>
           </p>
@@ -88,7 +88,7 @@ export default function tints() {
           </p>
         </section>
       </div>
-      <div className="w-full max-w-5xl mx-auto mb-10">
+      <div className="w-full bg-white max-w-5xl mx-auto mb-10">
       <Swiper
         modules={[Navigation, Pagination]}
         navigation
@@ -121,7 +121,7 @@ export default function tints() {
                   videoRefs.current[index] = el;
                   return;
                 }}                
-                controls={playingIndex === index} // show controls only when playing
+                controls={playingIndex === index}
                 muted
               />
               {playingIndex !== index && (
