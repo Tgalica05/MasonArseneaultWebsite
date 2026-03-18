@@ -7,7 +7,7 @@ const slabo = Slabo_27px({ subsets: ["latin"], weight: "400" });
 
 export default function BottomBar() {
   return (
-    <div className="w-full bg-black px-6 py-6 mb-20 lg:mb-0">       
+    <div className="w-full bg-black px-6 py-6">       
       {/* Container */}
       <div className="max-w-6xl mx-auto flex items-center justify-between md:justify-center relative">
 
