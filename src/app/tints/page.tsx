@@ -35,6 +35,10 @@ export default function tints() {
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
   const handlePlay = (index: number) => {
+    if (playingIndex !== null && playingIndex !== index) {
+      const currentVideo = videoRefs.current[playingIndex];
+      if (currentVideo) currentVideo.pause();
+    }
     setPlayingIndex(index);
     const video = videoRefs.current[index];
     if (video) video.play();
@@ -88,7 +92,7 @@ export default function tints() {
           </p>
         </section>
       </div>
-      <div className="w-full bg-white max-w-5xl mx-auto mb-10">
+      <div className="w-full bg-white max-w-5xl mx-auto pb-10">
       <Swiper
         modules={[Navigation, Pagination]}
         navigation
@@ -110,7 +114,7 @@ export default function tints() {
             <img
               src={item.src}
               alt={`media-${index}`}
-              className="w-50 h-auto object-cover rounded-xl"
+              className="w-full h-auto object-cover rounded-xl"
             />
           ) : (
             <div className="relative w-full h-auto rounded-xl overflow-hidden">

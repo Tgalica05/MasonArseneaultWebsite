@@ -3,6 +3,7 @@ import Image from "next/image";
 import {Rubik_Glitch, Slabo_27px } from "next/font/google";
 
 const title = "Relentless Wraps";
+const subtitle = `Seamless wraps, tints, and paint protection films for your vehicles and businesses`;
 const heading1 = `Transform and protect your vehicle with custom wraps, tints, 
 and PPF brought to you from the greater Hartford, CT area.`
 const description1 = `With our custom care, each job is tailored to you. Whether you want
@@ -26,12 +27,15 @@ export default function Home() {
     <div>
       {/* Image ribbon */}
       <div
-        className="w-full h-80 bg-center bg-cover bg-no-repeat flex justify-center items-center"
+        className="w-full h-80 bg-center bg-cover bg-no-repeat flex flex-col justify-center items-center"
         style={{ backgroundImage: "url('/wrapBackground.png')" }}
       >
         <h1 className={`text-white justify-center text-6xl md:text-9xl text-center ${rubikGlitch.className}`}>
           {title}
         </h1>
+        <h2 className={`text-white justify-center text-xl md:text-2xl  text-center italic mt-4 ${slabo.className}`}>
+          <i>{subtitle}</i>
+        </h2>
       </div>
 
       {/* White section below */}
