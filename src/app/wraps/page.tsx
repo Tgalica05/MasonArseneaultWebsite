@@ -113,7 +113,7 @@ export default function wraps() {
 
         </div>
       </div>
-      <section className="max-w-6xl mx-auto py-10 md:py-20 text-center text-black dark:text-black">
+      <section className="max-w-6xl mx-auto py-10 md:py-20 text-center bg-white text-black dark:bg-white dark:text-black">
           <p className={`text-2xl md:text-4xl font-bold mb-8 ${slabo.className}`}>
             <strong>Check out our diverse wrapping portfolio below:</strong>
           </p>

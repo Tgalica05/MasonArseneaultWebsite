@@ -72,7 +72,7 @@ export default function tints() {
         </div>
 
         {/* Services section */}
-        <section className="max-w-6xl mx-auto py-10 md:py-20 text-center text-black dark:text-black">
+        <section className="max-w-6xl mx-auto py-10 md:py-20 text-center bg-white text-black dark:text-black">
           <p className={`text-4xl font-bold mb-8 ${slabo.className}`}>
             <strong>Contact us today for</strong>
           </p>
