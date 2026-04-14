@@ -3,11 +3,10 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import Image from "next/image";
-import {Rubik_Glitch, Slabo_27px } from "next/font/google";
+import { Rubik_Glitch, Slabo_27px } from "next/font/google";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import { useRef, useState } from 'react';
-
 
 const heading1 = "Customizable Tinting Services";
 const description1 = `Experience the ultimate in style and privacy with
@@ -18,6 +17,7 @@ const description1 = `Experience the ultimate in style and privacy with
  experience with our professional tinting solutions that combine aesthetics 
  and functionality seamlessly. Contact us today to schedule your appointment 
  and give your vehicle the upgrade it deserves!`
+
 const media = [
   { type: 'video', src: '/Tints/Copy 061E92f2-4C90-4145-A9a9-126Da1829218.mp4' },
   { type: 'video', src: '/Tints/Img 08032.mp4' },
@@ -43,106 +43,128 @@ export default function tints() {
     const video = videoRefs.current[index];
     if (video) video.play();
   };
-  return (
-    <div>
-      <div className="w-full bg-white pt-10 px-6">
 
-        {/* First flex container w/ two columns */}
-        <div className="flex flex-col md:flex-row items-center gap-10 md:gap-20 max-w-6xl mx-auto my-auto">
-          {/* Left column: Heading + description */}
+  return (
+    <div className="bg-gradient-to-b from-white to-gray-100">
+
+      {/* HERO SECTION */}
+      <div className="max-w-6xl mx-auto px-6 py-16">
+        <div className="flex flex-col md:flex-row items-center gap-12">
+
+          {/* TEXT */}
           <div className={`md:w-1/2 ${slabo.className}`}>
-            <h2 className={`text-black text-2xl md:text-4xl text-center font-bold mb-6`}>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight dark:text-black">
               {heading1}
             </h2>
-            <p className="text-lg text-left md:text-2xl dark:text-black">
+
+            <div className="w-16 h-1 bg-black mb-6"></div>
+
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
               {description1}
             </p>
+
           </div>
 
-          {/* Right column: container to hold image */}
+          {/* IMAGE */}
           <div className="md:w-1/2">
             <Image
               src="/Tints/TintedRed.JPEG"
               alt="TintedRed"
-              width={300}
-              height={300}
-              className="w-full h-auto rounded-lg shadow-lg"
+              width={500}
+              height={500}
+              className="w-full h-auto rounded-2xl shadow-2xl"
             />
           </div>
         </div>
-
-        {/* Services section */}
-        <section className="max-w-6xl mx-auto py-10 md:py-20 text-center bg-white text-black dark:text-black">
-          <p className={`text-4xl font-bold mb-8 ${slabo.className}`}>
-            <strong>Contact us today for</strong>
-          </p>
-
-          <div className="flex flex-col md:flex-row items-center justify-center gap-10 mb-8">
-            <span className={`text-2xl md:text-3xl italic ${slabo.className}`}>Colored Tints</span>
-            <span className="hidden md:inline-block text-3xl md:text-5xl mx-2">•</span>
-            <span className={`text-2xl md:text-3xl italic ${slabo.className}`}>Standard Window Tints</span>
-            <span className="hidden md:inline-block text-3xl md:text-5xl mx-2">•</span>
-            <span className={`text-2xl md:text-3xl italic ${slabo.className}`}>Ceramic Tints</span>
-            <span className="hidden md:inline-block text-3xl md:text-5xl mx-2">•</span>
-            <span className={`text-2xl md:text-3xl italic ${slabo.className}`}>Mirrored Tints</span>
-          </div>
-
-          <p className={`text-4xl md:text-4xl font-bold ${slabo.className}`}>
-            Any shade, any color we do it <strong className="font-bold underline">ALL</strong>! Check out some of our favorite tint work:
-          </p>
-        </section>
       </div>
-      <div className="w-full bg-white max-w-5xl mx-auto pb-10">
-      <Swiper
-        modules={[Navigation, Pagination]}
-        navigation
-        pagination={{ clickable: true }}
-        spaceBetween={10}
-        slidesPerView={1}
-        centeredSlides={true}
-        breakpoints={{
-          768: {
-            slidesPerView: 3,
-            spaceBetween: 10,
-            centeredSlides: false
-          },
-        }}
-      >
-        {media.map((item, index) => (
-          <SwiperSlide key={index}>
-          {item.type === 'image' ? (
-            <img
-              src={item.src}
-              alt={`media-${index}`}
-              className="w-full h-auto object-cover rounded-xl"
-            />
-          ) : (
-            <div className="relative w-full h-auto rounded-xl overflow-hidden">
-              <video
-                src={item.src}
-                className="w-2/3 h-auto object-cover rounded-xl mx-auto"
-                ref={(el) => {
-                  videoRefs.current[index] = el;
-                  return;
-                }}                
-                controls={playingIndex === index}
-                muted
-              />
-              {playingIndex !== index && (
-                <button
-                  onClick={() => handlePlay(index)}
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-                            bg-black bg-opacity-50 text-white p-4 rounded-full text-3xl"
-                >
-                  ▶
-                </button>
-              )}
-            </div>
-          )}
-        </SwiperSlide>
-        ))}
-      </Swiper>
-    </div>
+
+      {/* SERVICES */}
+      <section className="max-w-6xl mx-auto px-6 py-16 text-center">
+
+        <p className={`text-3xl md:text-4xl font-bold mb-10 ${slabo.className} dark:text-black`}>
+          Contact us today for
+        </p>
+
+        <div className="flex flex-wrap justify-center gap-4 mb-10">
+          {["Colored Tints", "Standard Window Tints", "Ceramic Tints", "Mirrored Tints"].map((item, i) => (
+            <span
+              key={i}
+              className={`px-5 py-2 border border-black rounded-full text-lg md:text-xl ${slabo.className} dark:text-black`}
+            >
+              {item}
+            </span>
+          ))}
+        </div>
+
+        <p className={`text-2xl md:text-3xl font-semibold ${slabo.className} dark:text-black`}>
+          Any shade, any color — we do it <span className="underline">ALL</span>
+        </p>
+
+        <p className="mt-2 text-gray-600">
+          Check out some of our favorite tint work ↓
+        </p>
+      </section>
+
+      {/* SWIPER */}
+      <div className="max-w-6xl mx-auto px-4 pb-20">
+        <Swiper
+          modules={[Navigation, Pagination]}
+          navigation
+          pagination={{ clickable: true }}
+          spaceBetween={20}
+          slidesPerView={1}
+          centeredSlides={true}
+          breakpoints={{
+            768: {
+              slidesPerView: 3,
+              centeredSlides: false
+            },
+          }}
+        >
+          {media.map((item, index) => (
+            <SwiperSlide key={index}>
+              <div className="group transition duration-300 hover:scale-105">
+
+                {item.type === 'image' ? (
+                  <img
+                    src={item.src}
+                    alt={`media-${index}`}
+                    className="w-full h-auto object-cover rounded-2xl shadow-lg"
+                  />
+                ) : (
+                  <div className="relative rounded-2xl overflow-hidden shadow-xl">
+
+                    <video
+                      src={item.src}
+                      className="w-full h-auto object-cover"
+                      ref={(el) => {
+                        videoRefs.current[index] = el;
+                        return;
+                      }}
+                      controls={playingIndex === index}
+                      muted
+                    />
+
+                    {/* PLAY BUTTON */}
+                    {playingIndex !== index && (
+                      <button
+                        onClick={() => handlePlay(index)}
+                        className="absolute inset-0 flex items-center justify-center
+                                   bg-black/30 group-hover:bg-black/50 transition"
+                      >
+                        <span className="text-white text-5xl">▶</span>
+                      </button>
+                    )}
+
+                  </div>
+                )}
+
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+
     </div>
   );
 }

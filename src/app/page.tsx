@@ -1,138 +1,146 @@
 'use client'
 import Image from "next/image";
-import {Rubik_Glitch, Slabo_27px } from "next/font/google";
+import { Rubik_Glitch, Slabo_27px } from "next/font/google";
 
 const title = "Relentless Wraps";
 const subtitle = `Seamless wraps, tints, and paint protection films for your vehicles and businesses`;
-const heading1 = `Transform and protect your vehicle with custom wraps, tints, 
-and PPF brought to you from the greater Hartford, CT area.`
-const description1 = `With our custom care, each job is tailored to you. Whether you want
-to find a new, stylish, and protective look for your car, represent your company on an entire fleet of vehicles, 
-or upgrade and personalize your storefront, we have you covered! Our professional and meticulous
-work will ensure that no detail goes unnoticed, leaving you satisfied with a polished finish for years to come. Our
-belief is that nobody is too old to play with stickers.`;
+
+const heading1 = `Transform and protect your vehicle`
+const description1 = `Custom wraps, tints, and paint protection films tailored to your vision. Whether you're upgrading your personal ride or branding your business fleet, we deliver clean, high-quality results that last.`
+
 const heading2 = `Meet the owner`
 const description2 = `Hi! I'm Mason Arseneault, an experienced professional 
-in the car wrapping and tinting industry. I take great pride in all of my jobs, and work to the best
-of my abilities to ensure that my customers are satisfied with your final products. I have a passion for cars and a keen eye for detail which allows
- me to provide high-quality services to help your vehicles and companies shine. I can guarantee you exceptional
-customer service, while also tending to all of your wrapping, tinting, & paint protection
- needs with immense care. Feel free to contact me for a quote or check out my work via social media!`
+in the car wrapping and tinting industry. I take pride in every job and work closely with clients to ensure results that stand out. With a passion for cars and a strong attention to detail, I deliver high-quality finishes that speak for themselves.`
 
 const rubikGlitch = Rubik_Glitch({ subsets: ["latin"], weight: "400" });
 const slabo = Slabo_27px({ subsets: ["latin"], weight: "400" });
 
 export default function Home() {
   return (
-    <div>
-      {/* Image ribbon */}
+    <div className="bg-gradient-to-b from-black to-gray-100">
+
+      {/* HERO */}
       <div
-        className="w-full h-80 bg-center bg-cover bg-no-repeat flex flex-col justify-center items-center"
+        className="w-full h-[70vh] bg-center bg-cover bg-no-repeat flex flex-col justify-center items-center text-center px-6"
         style={{ backgroundImage: "url('/wrapBackground.png')" }}
       >
-        <h1 className={`text-white justify-center text-6xl md:text-9xl text-center ${rubikGlitch.className}`}>
-          {title}
-        </h1>
-        <h2 className={`text-white justify-center text-xl md:text-2xl  text-center italic mt-4 ${slabo.className}`}>
-          <i>{subtitle}</i>
-        </h2>
+        <div className="bg-black/60 p-6 rounded-2xl">
+          <h1 className={`text-white text-5xl md:text-8xl ${rubikGlitch.className}`}>
+            {title}
+          </h1>
+
+          <h2 className={`text-gray-200 text-lg md:text-2xl italic mt-4 ${slabo.className}`}>
+            {subtitle}
+          </h2>
+
+        </div>
       </div>
 
-      {/* White section below */}
-      <div className="w-full bg-white pt-10 px-6">
+      {/* SERVICES INTRO */}
+      <section className="max-w-6xl mx-auto px-6 py-16 bg-white md:rounded-3xl -mt-10 shadow-xl">
 
-        {/* First flex container w/ two columns */}
-        <div className="flex flex-col md:flex-row items-center gap-10 md:gap-20 max-w-6xl mx-auto my-auto">
-          {/* Left column: Heading + description */}
+        <div className="flex flex-col md:flex-row items-center gap-12">
+
           <div className={`md:w-1/2 ${slabo.className}`}>
-            <h2 className={`text-black text-2xl md:text-4xl text-center font-bold mb-6`}>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight dark:text-black">
               {heading1}
             </h2>
-            <p className="text-lg text-left md:text-2xl dark:text-black">
+
+            <div className="w-16 h-1 bg-black mb-6"></div>
+
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
               {description1}
             </p>
+
+            <div className="mt-8 flex flex-wrap gap-3">
+              {["Wraps", "Tints", "PPF"].map((item, i) => (
+                <span
+                  key={i}
+                  className={`px-4 py-2 border border-black rounded-full text-lg ${slabo.className} dark:text-black`}
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
           </div>
 
-          {/* Right column: container to hold image */}
           <div className="md:w-1/2">
             <Image
               src="/Wraps/MysteryVan.JPEG"
               alt="MysteryVan"
-              width={300}
-              height={300}
-              className="w-full h-auto rounded-lg shadow-lg"
+              width={500}
+              height={500}
+              className="w-full h-auto rounded-2xl shadow-2xl"
             />
           </div>
+
         </div>
+      </section>
 
-        {/* Second flex container w/ two columns */}
-        <div className="flex flex-col md:flex-row items-center py-10 md:py-20 gap-10 md:gap-20 max-w-6xl mx-auto">
+      {/* OWNER SECTION */}
+      <section className="max-w-6xl mx-auto px-6 py-20">
 
-          {/* Image column */}
-          <div className="md:w-1/2 order-2 md:order-1">
-            <div className="grid grid-cols-2 grid-rows-2 gap-2 aspect-square">
+        <div className="flex flex-col md:flex-row items-center gap-12">
 
-              {/* Top image */}
+          {/* IMAGES */}
+          <div className="md:w-1/2">
+            <div className="grid grid-cols-2 grid-rows-2 gap-3 aspect-square">
+
               <div className="col-span-2">
                 <Image
                   src="/owner_img1.JPEG"
                   alt="Owner1"
                   width={800}
                   height={400}
-                  className="w-full h-full object-cover shadow-lg rounded-lg"
+                  className="w-full h-full object-cover rounded-2xl shadow-xl"
                 />
               </div>
 
-              {/* Bottom left */}
               <div>
                 <Image
                   src="/owner_img2.JPEG"
                   alt="Owner2"
                   width={400}
                   height={400}
-                  className="w-full h-full object-cover rounded-lg shadow-lg"
+                  className="w-full h-full object-cover rounded-2xl shadow-xl"
                 />
               </div>
 
-              {/* Bottom right */}
               <div>
                 <Image
                   src="/owner_img3.JPEG"
                   alt="Owner3"
                   width={400}
                   height={400}
-                  className="w-full h-full object-cover rounded-lg shadow-lg"
+                  className="w-full h-full object-cover rounded-2xl shadow-xl"
                 />
               </div>
 
             </div>
           </div>
 
-          {/* Text column */}
-          <div className={`md:w-1/2 text-left order-1 md:order-2 ${slabo.className}`}>
-            <h2 className="text-black text-2xl md:text-4xl font-bold mb-6 text-center">
+          {/* TEXT */}
+          <div className={`md:w-1/2 ${slabo.className}`}>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-center md:text-left dark:text-black">
               {heading2}
             </h2>
 
-            <p className="text-lg md:text-2xl dark:text-black">
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
               {description2}
             </p>
 
-            <p className="text-lg md:text-2xl mt-5 text-center dark:text-black">
-              <strong>Phone:</strong> +1 (860) 573-9952
-            </p>
+            <div className="mt-8 space-y-3 text-lg md:text-xl dark:text-black">
+              <p><strong>Phone:</strong> +1 (860) 573-9952</p>
+              <p><strong>Email:</strong> relentlesswrapsct@gmail.com</p>
+              <p><strong>Instagram:</strong> @relentlesswrapsct</p>
+            </div>
 
-            <p className="text-lg md:text-2xl mt-5 text-center dark:text-black">
-              <strong>Email:</strong> relentlesswrapsct@gmail.com
-            </p>
-
-            <p className="text-lg md:text-2xl mt-5 text-center dark:text-black">
-              <strong>Social Media Tag:</strong> @relentlesswrapsct
-            </p>
           </div>
 
         </div>
-      </div>
+
+      </section>
+
     </div>
   );
 }

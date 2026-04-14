@@ -3,7 +3,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import Image from "next/image";
-import {Rubik_Glitch, Slabo_27px } from "next/font/google";
+import { Rubik_Glitch, Slabo_27px } from "next/font/google";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import { useRef, useState } from 'react';
@@ -16,8 +16,9 @@ sleek matte finish, or protect your paint with a clear wrap, we
 have you covered. Elevate your ride with our professional 
 wrapping solutions. Contact us today to discuss how we can
 turn your vision into reality!`
+
 const heading2 = `Wrapping Services for your BUSINESS`;
-const description2 = `Our commercial wrapping services are designed to help 
+const description2 = `By professionals, for professionals. Our commercial wrapping services are designed to help 
 your business stand out on the road. We can wrap anything from your company truck
 to an entire fleet of vehicles, or even your storefront. From vibrant colors to 
 custom logos, we offer a range of options to suit your business needs. 
@@ -59,120 +60,138 @@ export default function wraps() {
     const video = videoRefs.current[index];
     if (video) video.play();
   };
-  return (
-    <div>
-      <div className="w-full bg-white pt-10 px-6">
 
-        {/* First flex container w/ two columns */}
-        <div className="flex flex-col md:flex-row items-center gap-10 md:gap-20 max-w-6xl mx-auto my-auto">
-          {/* Left column: Heading + description */}
+  return (
+    <div className="bg-gradient-to-b from-white to-gray-100">
+
+      {/* PERSONAL WRAPS */}
+      <section className="max-w-6xl mx-auto px-6 py-16">
+        <div className="flex flex-col md:flex-row items-center gap-12">
+
           <div className={`md:w-1/2 ${slabo.className}`}>
-            <h2 className={`text-black text-2xl md:text-4xl text-center font-bold mb-6`}>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight dark:text-black">
               {heading1}
             </h2>
-            <p className="text-lg text-left md:text-2xl dark:text-black">
+
+            <div className="w-16 h-1 bg-black mb-6"></div>
+
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
               {description1}
             </p>
+
           </div>
 
-          {/* Right column: container to hold image */}
           <div className="md:w-1/2">
             <Image
               src="/Wraps/beigeCar.JPEG"
               alt="Beige Car"
-              width={300}
-              height={300}
-              className="w-full h-auto rounded-lg shadow-lg"
+              width={500}
+              height={500}
+              className="w-full h-auto rounded-2xl shadow-2xl"
             />
           </div>
+
         </div>
+      </section>
 
-        {/* 2nd flex container w/ two columns */}
-        <div className="flex flex-col md:flex-row items-center py-10 md:py-20 gap-10 md:gap-20 max-w-6xl mx-auto">
+      {/* BUSINESS WRAPS */}
+      <section className="max-w-6xl mx-auto px-6 py-16">
+        <div className="flex flex-col md:flex-row items-center gap-12">
 
-          {/* Right column: container to hold image */}
           <div className="md:w-1/2 order-2 md:order-1">
             <Image
               src="/Wraps/FoodTruck.JPEG"
               alt="Food Truck"
-              width={300}
-              height={300}
-              className="w-full h-auto rounded-lg shadow-lg"
+              width={500}
+              height={500}
+              className="w-full h-auto rounded-2xl shadow-2xl"
             />
           </div>
 
-          {/* Left column: Heading + description */}
-          <div className={`md:w-1/2 text-left order-1 md:order-2 ${slabo.className}`}>
-            <h2 className={`text-black text-2xl md:text-4xl text-center font-bold mb-6`}>
+          <div className={`md:w-1/2 order-1 md:order-2 ${slabo.className}`}>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight text-left dark:text-black">
               {heading2}
             </h2>
-            <p className="text-lg text-left md:text-2xl dark:text-black">
+
+            <div className="w-16 h-1 bg-black mb-6 ml-0"></div>
+
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed text-left">
               {description2}
             </p>
           </div>
 
         </div>
-      </div>
-      <section className="max-w-6xl mx-auto py-10 md:py-20 text-center bg-white text-black dark:bg-white dark:text-black">
-          <p className={`text-2xl md:text-4xl font-bold mb-8 ${slabo.className}`}>
-            <strong>Check out our diverse wrapping portfolio below:</strong>
-          </p>
       </section>
 
+      {/* PORTFOLIO HEADER */}
+      <section className="text-center px-6 pb-10">
+        <h3 className={`text-3xl md:text-4xl font-bold ${slabo.className} dark:text-black`}>
+          Our Wrap Portfolio
+        </h3>
+        <p className="text-gray-600 mt-2">
+          Real projects. Real results.
+        </p>
+      </section>
 
-      <div className="w-full bg-white max-w-5xl mx-auto pb-10">
-      <Swiper
-        modules={[Navigation, Pagination]}
-        navigation
-        pagination={{ clickable: true }}
-        spaceBetween={10}
-        slidesPerView={1}
-        centeredSlides={true}
-        className="h-96"
-        
-        breakpoints={{
-          768: {
-            slidesPerView: 2,
-            spaceBetween: 10,
-            centeredSlides: false
-          },
-        }}
-      >
-        {media.map((item, index) => (
-          <SwiperSlide key={index} className="flex items-center justify-center">
-          {item.type === 'image' ? (
-            <img
-              src={item.src}
-              alt={`media-${index}`}
-              className="w-full h-full object-cover rounded-xl"
-            />
-          ) : (
-            <div className="relative w-full h-full rounded-xl overflow-hidden flex items-center justify-center">
-              <video
-                src={item.src}
-                className="max-h-full max-w-full rounded-xl"
-                ref={(el) => {
-                  videoRefs.current[index] = el;
-                  return;
-                }}                
-                controls
-                muted
-              />
-              {playingIndex !== index && (
-                <button
-                  onClick={() => handlePlay(index)}
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-                            bg-black bg-opacity-50 text-white p-4 rounded-full text-3xl"
-                >
-                  ▶
-                </button>
-              )}
-            </div>
-          )}
-        </SwiperSlide>
-        ))}
-      </Swiper>
+      {/* SWIPER */}
+      <div className="max-w-6xl mx-auto px-4 pb-20">
+        <Swiper
+          modules={[Navigation, Pagination]}
+          navigation
+          pagination={{ clickable: true }}
+          spaceBetween={20}
+          slidesPerView={1}
+          centeredSlides={true}
+          breakpoints={{
+            768: {
+              slidesPerView: 2,
+              centeredSlides: false
+            },
+          }}
+        >
+          {media.map((item, index) => (
+            <SwiperSlide key={index} className='bg-transparent'>
+              <div className="group transition duration-300 hover:scale-105 flex items-center justify-center">
+
+                {item.type === 'image' ? (
+                  <img
+                    src={item.src}
+                    alt={`media-${index}`}
+                    className="max-h-[500px] w-auto object-contain rounded-2xl shadow-lg mx-auto"
+                  />
+                ) : (
+                  <div className="relative flex items-center justify-center w-full bg-transparent">
+
+                    <video
+                      src={item.src}
+                      className="max-h-[500px] w-auto object-contain rounded-2xl shadow-xl mx-auto bg-transparent"
+                      ref={(el) => {
+                        videoRefs.current[index] = el;
+                        return;
+                      }}
+                      controls={playingIndex === index}
+                      muted
+                      style={{ backgroundColor: 'transparent' }}
+                    />
+
+                    {playingIndex !== index && (
+                      <button
+                        onClick={() => handlePlay(index)}
+                        className="absolute inset-0 flex items-center justify-center
+                                  bg-black/20 group-hover:bg-black/40 transition rounded-2xl"
+                      >
+                        <span className="text-white text-5xl">▶</span>
+                      </button>
+                    )}
+
+                  </div>
+                )}
+
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
     </div>
-  </div>
   );
 }
