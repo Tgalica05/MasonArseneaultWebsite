@@ -3,14 +3,21 @@ import Image from "next/image";
 import { Rubik_Glitch, Slabo_27px } from "next/font/google";
 
 const title = "Relentless Wraps";
-const subtitle = `Seamless wraps, tints, and paint protection films for your vehicles and businesses`;
+const subtitle = `Seamless wraps, tints, and paint protection 
+films for your vehicles and businesses`;
 
 const heading1 = `Transform and protect your vehicle`
-const description1 = `Custom wraps, tints, and paint protection films tailored to your vision. Whether you're upgrading your personal ride or branding your business fleet, we deliver clean, high-quality results that last.`
+const description1 = `Custom wraps, tints, and paint protection 
+films tailored to your vision. Whether you're upgrading your personal 
+ride or branding your business fleet, we deliver clean, high-quality 
+results that last.`
 
 const heading2 = `Meet the owner`
 const description2 = `Hi! I'm Mason Arseneault, an experienced professional 
-in the car wrapping and tinting industry. I take pride in every job and work closely with clients to ensure results that stand out. With a passion for cars and a strong attention to detail, I deliver high-quality finishes that speak for themselves.`
+in the car wrapping and tinting industry. I take pride in every job and work 
+closely with clients to ensure results that stand out. With a passion for cars 
+and a strong attention to detail, I deliver high-quality finishes that speak 
+for themselves.`
 
 const rubikGlitch = Rubik_Glitch({ subsets: ["latin"], weight: "400" });
 const slabo = Slabo_27px({ subsets: ["latin"], weight: "400" });
@@ -66,8 +73,8 @@ export default function Home() {
 
           <div className="md:w-1/2">
             <Image
-              src="/Wraps/MysteryVan.JPEG"
-              alt="MysteryVan"
+              src="/Wraps/CovorPhoto.JPEG"
+              alt="CovorPhoto"
               width={500}
               height={500}
               className="w-full h-auto rounded-2xl shadow-2xl"

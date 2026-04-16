@@ -21,8 +21,7 @@ export default function BottomBar() {
         </div>
 
         {/* TikTok (always right) */}
-        {/* TikTok (always right) */}
-        <div className="absolute right-0">
+        <div className="absolute right-0 flex flex-col items-center space-y-2">
           <a
             href="https://www.tiktok.com/@relentlesswrapsct"
             target="_blank"
@@ -36,8 +35,20 @@ export default function BottomBar() {
               className="cursor-pointer hover:scale-110 transition-transform duration-200"
             />
           </a>
+          <a
+            href="https://www.instagram.com/relentlesswrapsct/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src="/Instagram.png"
+              alt="Instagram"
+              width={30}
+              height={30}
+              className="cursor-pointer hover:scale-110 transition-transform duration-200"
+            />
+          </a>
         </div>
-
       </div>
     </div>
   );

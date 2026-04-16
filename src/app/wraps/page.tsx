@@ -28,6 +28,8 @@ discuss how we can help your business make a lasting impression!`
 
 const media = [
   { type: 'video', src: '/Wraps/Vids/Boxtruck2.mp4' },
+  { type: 'video', src: '/Wraps/Vids/CoverPhotoVid.mp4' },
+  { type: 'image', src: '/Wraps/MysteryVan.JPEG' },
   { type: 'image', src: '/Wraps/SandalsCar.JPEG' },
   { type: 'video', src: '/Wraps/Vids/Counterwrap2.mp4' },
   { type: 'image', src: '/Wraps/Boat1.JPEG' },
@@ -41,7 +43,8 @@ const media = [
   { type: 'video', src: '/Wraps/Vids/Tmbuilds2.mp4' },
   { type: 'video', src: '/Wraps/Vids/Windowwrap2.mp4' },
   { type: 'video', src: '/Wraps/Vids/Windowwrld2.mp4' },
-  { type: 'image', src: '/Wraps/WrappedWall.JPEG' }
+  { type: 'image', src: '/Wraps/WrappedWall.JPEG' },
+  { type: 'video', src: '/Wraps/Vids/BlueCarWrap.mp4' }
 ];
 
 const rubikGlitch = Rubik_Glitch({ subsets: ["latin"], weight: "400" });
